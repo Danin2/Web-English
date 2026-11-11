@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Portfolio website, visual documentation gallery, and neo-brutalist web engineering lab.">
+  <title>Daninnn — Portfolio, Gallery & Web Engineering</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Accessibility: Skip Link -->
+  <a href="#home" class="skip-link">Skip to main content</a>
+
+  <!-- Header & Sticky Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <a href="#home" class="brand-logo" aria-label="Kolektif Web Home">
+          <span>Daninnn.dev</span>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link is-active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#gallery" class="nav-link">Photo Gallery</a></li>
+          <li><a href="#documentation" class="nav-link">Documentation</a></li>
+          <li><a href="#reviews" class="nav-link">Social Media</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Theme Toggle & Mobile Button -->
+        <div class="nav-actions">
+          <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light or dark theme"
+            title="Toggle Theme">
+            <svg class="icon theme-icon-dark" viewBox="0 0 24 24">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="icon theme-icon-light" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+          <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Open navigation menu"
+            aria-expanded="false">
+            <svg class="icon" viewBox="0 0 24 24">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Drawer Overlay -->
+    <div id="mobile-drawer" class="mobile-drawer" aria-label="Mobile Navigation">
+      <a href="#home" class="nav-link is-active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#gallery" class="nav-link">Photo Gallery</a>
+      <a href="#documentation" class="nav-link">Documentation</a>
+      <a href="#reviews" class="nav-link">Social Media</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+  </header>
+
+  <!-- Main Content (Single Page) -->
+  <main id="main-content" class="site-main">
+    <div class="container" style="display: flex; flex-direction: column; gap: var(--space-16);">
+
+      <!-- ===================================================================
+           SECTION 1: HOME / HERO (ABOUT ME & PHOTO FRAME)
+           =================================================================== -->
+      <section id="home" aria-labelledby="hero-title">
+        <div class="hero">
+
+          <!-- Left: Brief Introduction -->
+          <div class="hero__text">
+            <div class="hero__eyebrow">
+              <span class="badge badge--mustard">Web Engineer & UI Designer</span>
+            </div>
+            <h1 id="hero-title" class="hero__title">
+              Hello, I'm Muhammad Danindra.
+            </h1>
+            <p class="hero__lead">
+              I am studying Software Engineering at Duta Bangsa University in Surakarta. I am interested in learning
+              about web programming and AI (artificial intelligence).
+            </p>
+            <div class="hero__actions">
+              <a href="#gallery" class="btn btn--primary">
+                <svg class="icon icon--sm" viewBox="0 0 24 24">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>
+                <span>View Photo Gallery</span>
+              </a>
+              <a href="#contact" class="btn btn--outline">
+                <span>Get in Touch</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Photo Frame with Neo-Brutalist Border -->
+          <div class="hero__photo-wrapper">
+            <div class="hero__photo-frame">
+              <!-- Profile Photo -->
+              <img src="assets/img/Foto 7.jpeg" alt="Profile Photo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <svg viewBox="0 0 320 370" width="100%" height="100%"
+                style="display: none; background-color: var(--accent-mustard);">
+                <rect x="20" y="20" width="280" height="330" fill="var(--surface)" stroke="var(--ink)"
+                  stroke-width="2.5" rx="4" />
+                <circle cx="160" cy="130" r="50" fill="var(--accent-peach)" stroke="var(--ink)" stroke-width="2.5" />
+                <path d="M90 270 c0 -45 32 -65 70 -65 s70 20 70 65" fill="var(--accent-blue)" stroke="var(--ink)"
+                  stroke-width="2.5" />
+                <line x1="160" y1="180" x2="160" y2="205" stroke="var(--ink)" stroke-width="2.5" />
+                <text x="50%" y="300" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold"
+                  fill="var(--ink)">[ PUT YOUR PHOTO HERE ]</text>
+                <text x="50%" y="322" text-anchor="middle" font-family="monospace" font-size="10"
+                  fill="var(--ink-soft)">assets/img/profile.png</text>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION 2: ABOUT & CAREER TIMELINE
+           =================================================================== -->
+      <section id="about" aria-labelledby="about-title">
+        <div class="about-hero">
+          <div>
+            <span class="badge badge--peach" style="margin-bottom: var(--space-3);">About Me</span>
+            <h2 id="about-title" style="margin-bottom: var(--space-4);">
+              Hi, I'm a Software Engineering Technology student.
+            </h2>
+            <p style="font-size: var(--text-md); margin-bottom: var(--space-3); color: var(--ink);">
+              Hello! I'm <strong>Muhammad Danindra</strong> . People usually call me Dani or Danin. I am a student
+              majoring in Software Engineering at Duta Bangsa University in Surakarta. I have a strong interest in
+              technology, programming, and artificial intelligence (AI).
+
+            </p>
+            <p style="margin-bottom: var(--space-4);">
+              I am currently studying information systems, computer networks, and algorithms. I am also delving deeper
+              into web development and software engineering. I am passionate about learning new things, web programming,
+              artificial intelligence, and problem-solving.
+            </p>
+            <div class="flex gap-3" style="flex-wrap: wrap;">
+              <a href="#contact" class="btn btn--primary">
+                <svg class="icon icon--sm" viewBox="0 0 24 24">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                <span>Contact Me</span>
+              </a>
+              <a href="#gallery" class="btn btn--outline">View Visual Gallery</a>
+            </div>
+          </div>
+
+          <aside class="profile-card">
+            <div class="profile-avatar">
+              <img src="assets/img/profile.png" alt="profile">
+            </div>
+            <h3 style="font-size: var(--text-lg); margin-bottom: 2px;">Muhammad Danindra</h3>
+            <span
+              style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--ink-soft); display: block; margin-bottom: var(--space-3);">
+              Student • Surakarta
+            </span>
+            <div
+              style="background-color: var(--surface); border: 1.5px solid var(--border-color); border-radius: var(--radius-sm); padding: var(--space-3); text-align: left; font-size: var(--text-xs); display: flex; flex-direction: column; gap: var(--space-2);">
+              <div><strong>Focus:</strong> Programming, Web Development, & Artificial Intelligence (AI)</div>
+              <div><strong>Currently Learning:</strong> Python, PHP, HTML, CSS, Algorithms</div>
+              <div><strong>Status:</strong> Software Engineering Student</div>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Career Timeline -->
+        <div class="card card--static" style="margin-top: var(--space-6);">
+          <div class="card__header">
+            <span class="badge badge--sage">Academic Journey</span>
+            <h3 style="margin-top: 2px;">My Academic Journey</h3>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item anim-ready">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2026 — Present</div>
+              <div class="timeline-role">University</div>
+              <div class="timeline-company">Duta Bangsa University • Surakarta</div>
+            </div>
+            <div class="timeline-item anim-ready">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2023-2026</div>
+              <div class="timeline-role">Vocational High School</div>
+              <div class="timeline-company">SMK 2 Surakarta • Surakarta</div>
+            </div>
+            <div class="timeline-item anim-ready">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2020-2023</div>
+              <div class="timeline-role">Junior High School</div>
+              <div class="timeline-company">SMPN 2 Baki • Sukoharjo</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION 3: PHOTO GALLERY & VISUAL DOCUMENTATION
+           =================================================================== -->
+      <section id="gallery" aria-labelledby="gallery-title">
+        <div style="margin-bottom: var(--space-4);">
+          <span class="badge badge--mustard">Visual Documentation</span>
+          <h2 id="gallery-title" style="margin-top: var(--space-2);">Photo Gallery & Activity Archive</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- Photo 1 -->
+          <article class="gallery-card anim-ready">
+            <div class="gallery-media">
+              <img src="assets/img/Foto 1.jpeg" alt="Photo 1"
+                onload="this.style.display='block'; if(this.nextElementSibling) this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='block';"
+                style="display: none;">
+              <svg viewBox="0 0 400 220" width="100%" height="100%"
+                style="display: block; background-color: var(--accent-mustard);">
+                <rect x="20" y="30" width="360" height="150" fill="var(--surface)" stroke="var(--ink)"
+                  stroke-width="2.5" rx="4" />
+                <rect x="50" y="55" width="180" height="95" fill="var(--surface-alt)" stroke="var(--ink)"
+                  stroke-width="2" rx="2" />
+                <rect x="250" y="55" width="100" height="95" fill="var(--accent-sage)" stroke="var(--ink)"
+                  stroke-width="2" rx="2" />
+                <line x1="140" y1="180" x2="260" y2="180" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" />
+                <text x="50%" y="195" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold"
+                  fill="var(--ink)">[ PHOTO 1 ]</text>
+              </svg>
+            </div>
+          </article>
+
+          <!-- Photo 2 -->
+          <article class="gallery-card anim-ready">
+            <div class="gallery-media">
+              <img src="assets/img/Foto 2.jpeg" alt="Photo 2"
+                onload="this.style.display='block'; if(this.nextElementSibling) this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='block';"
+                style="display: none;">
+              <svg viewBox="0 0 400 220" width="100%" height="100%"
+                style="display: block; background-color: var(--accent-peach);">
+                <circle cx="200" cy="90" r="45" fill="var(--surface)" stroke="var(--ink)" stroke-width="2.5" />
+                <rect x="120" y="145" width="160" height="50" fill="var(--surface)" stroke="var(--ink)"
+                  stroke-width="2.5" rx="6" />
+                <text x="50%" y="100" text-anchor="middle" font-family="monospace" font-size="28" font-weight="bold"
+                  fill="var(--ink)">🎤</text>
+                <text x="50%" y="175" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold"
+                  fill="var(--ink)">[ PHOTO 2 ]</text>
+              </svg>
+            </div>
+          </article>
+
+          <!-- Photo 3 -->
+          <article class="gallery-card anim-ready">
+            <div class="gallery-media">
+              <img src="assets/img/Foto 3.jpeg" alt="Photo 3"
+                onload="this.style.display='block'; if(this.nextElementSibling) this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='block';"
+                style="display: none;">
+              <svg viewBox="0 0 400 220" width="100%" height="100%"
+                style="display: block; background-color: var(--accent-sage);">
+                <rect x="40" y="30" width="320" height="150" fill="var(--surface)" stroke="var(--ink)"
+                  stroke-width="2.5" rx="4" />
+                <circle cx="100" cy="100" r="24" fill="var(--accent-peach)" stroke="var(--ink)" stroke-width="2" />
+                <rect x="160" y="80" width="80" height="40" fill="var(--accent-blue)" stroke="var(--ink)"
+                  stroke-width="2" rx="2" />
+                <circle cx="300" cy="100" r="24" fill="var(--accent-mustard)" stroke="var(--ink)" stroke-width="2" />
+                <line x1="124" y1="100" x2="160" y2="100" stroke="var(--ink)" stroke-width="2" />
+                <line x1="240" y1="100" x2="276" y2="100" stroke="var(--ink)" stroke-width="2" />
+                <text x="50%" y="160" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold"
+                  fill="var(--ink)">[ PHOTO 3 ]</text>
+              </svg>
+            </div>
+          </article>
+
+          <!-- Photo 4 -->
+          <article class="gallery-card anim-ready">
+            <div class="gallery-media">
+              <img src="assets/img/Foto 4.jpeg" alt="Photo 4"
+                onload="this.style.display='block'; if(this.nextElementSibling) this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='block';"
+                style="display: none;">
+              <svg viewBox="0 0 400 220" width="100%" height="100%"
+                style="display: block; background-color: var(--accent-blue);">
+                <rect x="60" y="40" width="280" height="135" fill="var(--surface)" stroke="var(--ink)"
+                  stroke-width="2.5" rx="4" />
+                <line x1="90" y1="75" x2="310" y2="75" stroke="var(--ink)" stroke-width="2" />
+                <line x1="90" y1="105" x2="260" y2="105" stroke="var(--ink)" stroke-width="2" />
+                <line x1="90" y1="135" x2="200" y2="135" stroke="var(--ink)" stroke-width="2" />
+                <text x="50%" y="160" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold"
+                  fill="var(--ink)">[ PHOTO 4 ]</text>
+              </svg>
+            </div>
+          </article>
+
+          <!-- Photo 5 -->
+          <article class="gallery-card anim-ready">
+            <div class="gallery-media">
+              <img src="assets/img/Foto 5.jpeg" alt="Photo 5"
+                onload="this.style.display='block'; if(this.nextElementSibling) this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='block';"
+                style="display: none;">
+              <svg viewBox="0 0 400 220" width="100%" height="100%"
+                style="display: block; background-color: var(--accent-peach);">
+                <polygon points="200,45 280,165 120,165" fill="var(--accent-sage)" stroke="var(--ink)"
+                  stroke-width="2.5" />
+                <polygon points="270,75 340,165 200,165" fill="var(--surface)" stroke="var(--ink)" stroke-width="2.5" />
+                <circle cx="100" cy="70" r="22" fill="var(--accent-mustard)" stroke="var(--ink)" stroke-width="2" />
+                <text x="50%" y="195" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold"
+                  fill="var(--ink)">[ PHOTO 5 ]</text>
+              </svg>
+            </div>
+          </article>
+
+          <!-- Photo 6 -->
+          <article class="gallery-card anim-ready">
+            <div class="gallery-media">
+              <img src="assets/img/Foto 6.jpeg" alt="Photo 6"
+                onload="this.style.display='block'; if(this.nextElementSibling) this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='block';"
+                style="display: none;">
+              <svg viewBox="0 0 400 220" width="100%" height="100%"
+                style="display: block; background-color: var(--accent-mustard);">
+                <rect x="90" y="45" width="95" height="130" fill="var(--surface)" stroke="var(--ink)" stroke-width="2.5"
+                  rx="2" />
+                <rect x="215" y="45" width="95" height="130" fill="var(--accent-blue)" stroke="var(--ink)"
+                  stroke-width="2.5" rx="2" />
+                <line x1="110" y1="80" x2="165" y2="80" stroke="var(--ink)" stroke-width="2" />
+                <line x1="235" y1="80" x2="290" y2="80" stroke="var(--ink)" stroke-width="2" />
+                <text x="50%" y="195" text-anchor="middle" font-family="monospace" font-size="12" font-weight="bold"
+                  fill="var(--ink)">[ PHOTO 6 ]</text>
+              </svg>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION 4: DOCUMENTATION (PHOTO + FAVORITE CHARACTER & SCENE)
+           =================================================================== -->
+      <section id="documentation" aria-labelledby="docs-title">
+        <div style="margin-bottom: var(--space-4);">
+          <span class="badge badge--mustard">Documentation & Favorites</span>
+          <h2 id="docs-title" style="margin-top: var(--space-2);">My Favorite Characters & Scene Documentation</h2>
+        </div>
+
+        <div class="favorite-doc-grid">
+
+          <!-- Left Column: Photo Frame -->
+          <div class="favorite-frame-card anim-ready">
+            <div class="favorite-frame">
+              <!-- Put your favorite scene/character photo in assets/img/favorite.jpg -->
+              <img src="assets/img/Foto 3.jpeg" alt="Favorite Character or Scene"
+                onload="this.style.display='block'; if(this.nextElementSibling) this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='block';"
+                style="display: none;">
+              <svg viewBox="0 0 400 300" width="100%" height="100%"
+                style="display: block; background-color: var(--accent-mustard);">
+                <rect x="25" y="25" width="350" height="250" fill="var(--surface)" stroke="var(--ink)"
+                  stroke-width="2.5" rx="4" />
+                <circle cx="200" cy="120" r="50" fill="var(--accent-peach)" stroke="var(--ink)" stroke-width="2" />
+                <polygon points="110,240 290,240 200,165" fill="var(--accent-blue)" stroke="var(--ink)"
+                  stroke-width="2" />
+                <polygon points="170,240 330,240 250,185" fill="var(--accent-sage)" stroke="var(--ink)"
+                  stroke-width="2" />
+                <text x="50%" y="225" text-anchor="middle" font-family="monospace" font-size="13" font-weight="bold"
+                  fill="var(--ink)">[ PUT YOUR PHOTO HERE ]</text>
+                <text x="50%" y="245" text-anchor="middle" font-family="monospace" font-size="10"
+                  fill="var(--ink-soft)">assets/img/favorite.jpg</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Right Column: My Favorite Character & My Favorite Scene -->
+          <div class="favorite-text-column">
+
+            <!-- Block 1: My Favorite Character -->
+            <article class="card card--peach">
+              <div class="card__header">
+                <div>
+                  <span class="badge badge--neutral" style="margin-bottom: 2px;">Character Spotlight</span>
+                  <h3 style="margin-top: 4px; font-size: var(--text-lg); color: var(--ink);">My Favorite Character</h3>
+                </div>
+                <svg class="icon icon--sm" viewBox="0 0 24 24" style="stroke: var(--ink);">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              </div>
+              <div class="card__body">
+                <div
+                  style="background-color: var(--surface); border: var(--border); border-radius: var(--radius-xs); padding: var(--space-3); margin-bottom: var(--space-3);">
+                  <strong style="display: block; font-size: var(--text-base); color: var(--ink); margin-bottom: 2px;">
+                    Bottom
+                  </strong>
+                  <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--ink-soft);">
+                    Drama Performance
+                  </span>
+                </div>
+                <p style="font-size: var(--text-sm); color: var(--ink-soft); line-height: 1.6;">
+                  My favorite character is Bottom, the weaver. He’s so funny and full of energy.
+                  When Quince cast Bottom as Pyramus,
+                  Bottom didn’t seem happy about it. He wanted to play Thisbe,
+                  the Lion, and even the entire cast all by himself, and
+                  he boasted, “I’ll raise a storm!” It’s that confidence
+                  that makes him so funny. The actor’s performance was truly extraordinary. His voice
+                  was expressive and funny, his movements
+                  were nimble and energetic, and
+                  his timing was spot-on, so the audience laughed at his jokes.
+                </p>
+              </div>
+            </article>
+
+            <!-- Block 2: My Favorite Scene -->
+            <article class="card card--sage">
+              <div class="card__header">
+                <div>
+                  <span class="badge badge--neutral" style="margin-bottom: 2px;">Iconic Moment</span>
+                  <h3 style="margin-top: 4px; font-size: var(--text-lg); color: var(--ink);">My Favorite Scene</h3>
+                </div>
+                <svg class="icon icon--sm" viewBox="0 0 24 24" style="stroke: var(--ink);">
+                  <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18" />
+                  <line x1="7" y1="2" x2="7" y2="22" />
+                  <line x1="17" y1="2" x2="17" y2="22" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                </svg>
+              </div>
+              <div class="card__body">
+                <div
+                  style="background-color: var(--surface); border: var(--border); border-radius: var(--radius-xs); padding: var(--space-3); margin-bottom: var(--space-3);">
+                  <strong style="display: block; font-size: var(--text-base); color: var(--ink); margin-bottom: 2px;">
+                    Bottom and Titania (Bottom wakes up Titania)
+                  </strong>
+                  <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--ink-soft);">
+                    Act 3 / Scene 1
+                  </span>
+                </div>
+                <p style="font-size: var(--text-sm); color: var(--ink-soft); line-height: 1.6;">
+                  One of my favorite scenes from the play is when Puck transforms Bottom’s appearance and he wakes
+                  Titania from her slumber with his singing. The scene is very funny and Titania falls instantly in love
+                  with him declaring him wise and handsome. Bottom replies to her declaration with the witty line
+                  “Common sense and love rarely go hand in hand these".
+                  The costume Bottom wore during that scene was a monkey mask, which looked very funny. His energetic
+                  and humorous performance was perfectly in tune with the storyline, making the audience laugh.
+                </p>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION 5: SOCIAL MEDIA
+           =================================================================== -->
+      <section id="reviews" aria-labelledby="reviews-title">
+        <div style="margin-bottom: var(--space-4);">
+          <span class="badge badge--mustard">Social Media</span>
+          <h2 id="reviews-title" style="margin-top: var(--space-2);">Social Media</h2>
+        </div>
+
+        <!-- 2 Social Media Cards -->
+        <div id="reviews-grid" class="reviews-grid">
+          <!-- Card 1: Instagram -->
+          <article class="card review-card anim-ready">
+            <div class="card__header" style="margin-bottom: var(--space-2);">
+              <span class="badge badge--peach">Social Media</span>
+            </div>
+            <div class="card__media"
+              style="width: 100%; height: 200px; border: var(--border); border-radius: var(--radius-xs); overflow: hidden; margin-bottom: var(--space-3); background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); display: flex; align-items: center; justify-content: center;">
+              <img src="assets/img/Instagram.jpg" alt="Instagram"
+                onload="this.style.display='block'; if(this.nextElementSibling) this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='block';"
+                style="display: none; width: 100%; height: 100%; object-fit: cover;">
+              <svg viewBox="0 0 24 24" width="72" height="72" fill="none" stroke="#FFFFFF" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </div>
+            <div class="card__body">
+              <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-2);">Instagram</h3>
+              <p
+                style="font-size: var(--text-xs); color: var(--ink-soft); line-height: 1.5; margin-bottom: var(--space-3);">
+                Instagram is a social media app owned by Meta where people share photos, Reels, and Stories with friends
+                and followers. </p>
+              <!-- Dedicated Pros & Cons Section -->
+              <div class="pros-cons-container">
+                <!-- Bagian Kelebihan (Pros) -->
+                <div class="pros-box">
+                  <div class="pros-box__header">
+                    <span class="badge badge--sage">Strengths</span>
+                  </div>
+                  <ul class="pros-box__list">
+                    <li class="pro-item">✓ Stories and Close Friends make it easy to share everyday moments without
+                      everyone seeing them</li>
+                    <li class="pro-item">✓ Photos and videos look clean, so it’s a good place for personal branding</li>
+                  </ul>
+                </div>
+
+                <!-- Bagian Kekurangan (Cons) -->
+                <div class="cons-box">
+                  <div class="cons-box__header">
+                    <span class="badge badge--peach">Weaknesses</span>
+                  </div>
+                  <ul class="cons-box__list">
+                    <li class="con-item">✕ The video algorithm is too fast, and strange videos often appear</li>
+                    <li class="con-item">✕ A lot of ads that are very distracting</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: TikTok -->
+          <article class="card review-card anim-ready">
+            <div class="card__header" style="margin-bottom: var(--space-2);">
+              <span class="badge badge--peach">Social Media</span>
+            </div>
+            <div class="card__media"
+              style="width: 100%; height: 200px; border: var(--border); border-radius: var(--radius-xs); overflow: hidden; margin-bottom: var(--space-3); background-color: #010101; display: flex; align-items: center; justify-content: center;">
+              <img src="assets/img/Tiktok.jpg" alt="TikTok"
+                onload="this.style.display='block'; if(this.nextElementSibling) this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='block';"
+                style="display: none; width: 100%; height: 100%; object-fit: cover;">
+              <svg viewBox="0 0 24 24" width="72" height="72" fill="none" style="display: block;">
+                <path
+                  d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-2.887 2.887 2.896 2.896 0 0 1-2.887-2.887 2.896 2.896 0 0 1 2.887-2.887c.307 0 .604.048.882.138V9.324a6.34 6.34 0 0 0-.882-.062C5.975 9.262 3.14 12.097 3.14 15.6a6.34 6.34 0 0 0 6.34 6.34c3.498 0 6.335-2.838 6.335-6.34V9.006a8.163 8.163 0 0 0 4.774 1.526V7.087a4.78 4.78 0 0 1-1-.401z"
+                  fill="#25F4EE" transform="translate(-1, 1)" opacity="0.8" />
+                <path
+                  d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-2.887 2.887 2.896 2.896 0 0 1-2.887-2.887 2.896 2.896 0 0 1 2.887-2.887c.307 0 .604.048.882.138V9.324a6.34 6.34 0 0 0-.882-.062C5.975 9.262 3.14 12.097 3.14 15.6a6.34 6.34 0 0 0 6.34 6.34c3.498 0 6.335-2.838 6.335-6.34V9.006a8.163 8.163 0 0 0 4.774 1.526V7.087a4.78 4.78 0 0 1-1-.401z"
+                  fill="#FE2C55" transform="translate(1, -1)" opacity="0.8" />
+                <path
+                  d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-2.887 2.887 2.896 2.896 0 0 1-2.887-2.887 2.896 2.896 0 0 1 2.887-2.887c.307 0 .604.048.882.138V9.324a6.34 6.34 0 0 0-.882-.062C5.975 9.262 3.14 12.097 3.14 15.6a6.34 6.34 0 0 0 6.34 6.34c3.498 0 6.335-2.838 6.335-6.34V9.006a8.163 8.163 0 0 0 4.774 1.526V7.087a4.78 4.78 0 0 1-1-.401z"
+                  fill="#FFFFFF" />
+              </svg>
+            </div>
+            <div class="card__body">
+              <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-2);">TikTok</h3>
+              <p
+                style="font-size: var(--text-xs); color: var(--ink-soft); line-height: 1.5; margin-bottom: var(--space-3);">
+                TikTok is a short-video app from ByteDance where users watch, make, and share videos, often with music,
+                effects, and trends.
+              </p>
+              <!-- Dedicated Pros & Cons Section -->
+              <div class="pros-cons-container">
+                <!-- Bagian Kelebihan (Pros) -->
+                <div class="pros-box">
+                  <div class="pros-box__header">
+                    <span class="badge badge--sage">Strengths</span>
+                  </div>
+                  <ul class="pros-box__list">
+                    <li class="pro-item">✓ The For You Page (FYP) is very good at finding videos I like, even when I
+                      don’t follow the creator</li>
+                    <li class="pro-item">✓ The built-in editing tools, sounds, and effects make it easy to create a
+                      video without any extra app</li>
+                  </ul>
+                </div>
+
+                <!-- Bagian Kekurangan (Cons) -->
+                <div class="cons-box">
+                  <div class="cons-box__header">
+                    <span class="badge badge--peach">Weaknesses</span>
+                  </div>
+                  <ul class="cons-box__list">
+                    <li class="con-item">✕ It’s very addictive, and I often end up scrolling for much longer than I
+                      planned</li>
+                    <li class="con-item">✕ Some content is low quality or just copies a trend, and misinformation
+                      spreads quickly too</li>
+                    <li class="con-item">✕ There are too many ads popping up, and they're really annoying</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION 6: CONTACT & INQUIRIES
+           =================================================================== -->
+      <section id="contact" aria-labelledby="contact-title">
+        <div style="margin-bottom: var(--space-4);">
+          <span class="badge badge--peach">Contact</span>
+          <h2 id="contact-title" style="margin-top: var(--space-2);">My Contact</h2>
+        </div>
+
+        <div class="contact-grid">
+          <aside class="card card--peach anim-ready">
+            <div class="card__header">
+              <span class="badge badge--neutral">Official Contact</span>
+              <svg class="icon icon--sm" viewBox="0 0 24 24">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+            </div>
+            <div class="card__body">
+              <h3 style="font-size: var(--text-lg); margin-bottom: var(--space-2); color: var(--ink);">I'll reply after
+                class.</h3>
+              <p
+                style="font-size: var(--text-xs); color: var(--ink-soft); line-height: 1.5; margin-bottom: var(--space-4);">
+                I study from 8 a.m. to 3 p.m. Please send me a message outside of my study hours.
+              </p>
+              <ul class="contact-info-list">
+                <li class="contact-info-item">
+                  <div class="contact-icon-box">
+                    <svg class="icon" viewBox="0 0 24 24">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                  </div>
+                  <div>
+                    <strong
+                      style="font-size: var(--text-xs); text-transform: uppercase; color: var(--ink-soft); display: block;">Direct
+                      Email</strong>
+                    <a href="mailto:danindra@kolektif.dev"
+                      style="font-size: var(--text-sm); font-weight: 700; color: var(--ink);">danindraiswardhana@gmail.com</a>
+                  </div>
+                </li>
+                <li class="contact-info-item">
+                  <div class="contact-icon-box">
+                    <svg class="icon" viewBox="0 0 24 24">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </div>
+                  <div>
+                    <strong
+                      style="font-size: var(--text-xs); text-transform: uppercase; color: var(--ink-soft); display: block;">Location
+                      & Timezone</strong>
+                    <span style="font-size: var(--text-sm); font-weight: 600; color: var(--ink);">Surakarta, Indonesia
+                      (WIB /
+                      UTC+7)</span>
+                  </div>
+                </li>
+              </ul>
+              <div style="margin-top: var(--space-4); padding-top: var(--space-3); border-top: var(--border-dashed);">
+                <div class="contact-social-links">
+                  <a href="https://github.com/Danin2" target="_blank" rel="noopener noreferrer"
+                    class="btn btn--sm btn--outline" style="background-color: var(--surface);">GitHub</a>
+                  <a href="https://www.linkedin.com/in/muhammad-danindra-iswardhana-b2b7282a4/" target="_blank"
+                    rel="noopener noreferrer" class="btn btn--sm btn--outline"
+                    style="background-color: var(--surface);">LinkedIn</a>
+                  <a href="https://www.instagram.com/dn_nin?xtok=amh5ZmN5OGg5b29x" target="_blank"
+                    rel="noopener noreferrer" class="btn btn--sm btn--outline"
+                    style="background-color: var(--surface);">Instagram</a>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-col__title">
+            <span class="brand-logo__tag">DEV</span>
+            <span>Daninnn.dev</span>
+          </div>
+          <p style="font-size: var(--text-xs); color: var(--ink-soft); max-width: 40ch;">
+            One-page portfolio, technical documentation, visual gallery, and personal contact information
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col__title">Jump to Section</h4>
+          <ul class="footer-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#gallery">Photo Gallery</a></li>
+            <li><a href="#documentation">Documentation</a></li>
+            <li><a href="#reviews">Social Media</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col__title">Ethics</h4>
+          <p style="font-size: var(--text-xs); color: var(--ink-soft); margin-bottom: var(--space-2);">
+            Independent documentation and visual content built without hidden sponsored agenda.
+          </p>
+          <p style="font-size: var(--text-xs); font-family: var(--font-mono); color: var(--ink-soft);">
+            Build: Pure HTML5 + CSS Tokens + Vanilla ES6
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Daninnn.dev — All rights reserved. Single page edition.</div>
+        <div class="flex gap-4">
+          <a href="#home" style="font-size: var(--text-xs); font-weight: 700;">Back to Top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

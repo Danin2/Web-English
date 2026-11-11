@@ -1,0 +1,124 @@
+/**
+ * TOKENS.CSS
+ * Neo-Brutalist Design Tokens - Muted Warm Palette
+ * Built with CSS Custom Properties
+ */
+
+:root {
+  /* --- Base Color Palette (Warm & Muted, Non-Neon) --- */
+  --bg: #F4EFE6;           /* Krem hangat, latar utama */
+  --surface: #FDFBF7;      /* Permukaan kartu & panel */
+  --surface-alt: #EBE4D8;  /* Permukaan sekunder/aksen netral */
+  --surface-hover: #F2ECE0;/* Hover state untuk list/item */
+
+  /* --- Ink & Text --- */
+  --ink: #26252C;          /* Teks utama & border solid (bukan #000 pekat) */
+  --ink-soft: #595764;     /* Teks sekunder & deskripsi */
+  --ink-faint: #8E8C9A;    /* Placeholder & divider halus */
+
+  /* --- Accent Palette (Pastel Hangat Berkarakter) --- */
+  --accent-peach: #EBB6A4;   /* Terracotta / Peach lembut */
+  --accent-sage: #B8CBA8;    /* Sage green alami */
+  --accent-blue: #A7BCD8;    /* Dusty blue teknikal */
+  --accent-mustard: #EAD287; /* Mustard hangat */
+  --accent-coral: #E68F80;   /* Aksen perhatian / warning */
+
+  /* --- Semantic Status --- */
+  --status-success: #88B990;
+  --status-warning: #EAD287;
+  --status-danger: #E27968;
+  --status-info: #A7BCD8;
+
+  /* --- Borders & Strokes --- */
+  --border-width: 2.5px;
+  --border-width-lg: 3px;
+  --border-color: var(--ink);
+  --border: var(--border-width) solid var(--border-color);
+  --border-lg: var(--border-width-lg) solid var(--border-color);
+  --border-dashed: var(--border-width) dashed var(--border-color);
+
+  /* --- Hard Shadows (Brutalist Zero-Blur) --- */
+  --shadow-color: var(--border-color);
+  --shadow-sm: 2px 2px 0 var(--shadow-color);
+  --shadow: 4px 4px 0 var(--shadow-color);
+  --shadow-lg: 6px 6px 0 var(--shadow-color);
+  --shadow-xl: 8px 8px 0 var(--shadow-color);
+  --shadow-active: 1px 1px 0 var(--shadow-color);
+
+  /* --- Radius (Sudut Tegas dan Presisi) --- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-pill: 9999px;
+
+  /* --- Typography --- */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, Monaco, monospace;
+
+  /* --- Fluid Type Scale (clamp) --- */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
+  --text-sm: clamp(0.8125rem, 0.77rem + 0.3vw, 0.875rem);
+  --text-base: clamp(0.9375rem, 0.9rem + 0.35vw, 1.0625rem);
+  --text-md: clamp(1.0625rem, 1rem + 0.45vw, 1.25rem);
+  --text-lg: clamp(1.25rem, 1.15rem + 0.6vw, 1.5rem);
+  --text-xl: clamp(1.5rem, 1.35rem + 0.9vw, 1.875rem);
+  --text-2xl: clamp(1.875rem, 1.65rem + 1.3vw, 2.375rem);
+  --text-3xl: clamp(2.25rem, 1.95rem + 1.8vw, 3.125rem);
+
+  /* --- Spacing Scale --- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* --- Layout & Container --- */
+  --container-max: 1200px;
+  --container-pad: clamp(16px, 3.5vw, 32px);
+  --header-height: 72px;
+
+  /* --- Transitions & Timing --- */
+  --transition-fast: 140ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Dark Theme Palette (Gentle Dark, Muted Contrast, Ergonomic) --- */
+[data-theme="dark"] {
+  --bg: #15141B;           /* Charcoal hangat gelap, ramah di mata */
+  --surface: #1E1D27;      /* Permukaan kartu gelap elegan */
+  --surface-alt: #262432;  /* Panel kontras sekunder */
+  --surface-hover: #2E2B3C;
+
+  --ink: #E6E2D8;          /* Teks terang hangat (bukan pure white silau) */
+  --ink-soft: #9E9AA9;     /* Teks sekunder ramah baca */
+  --ink-faint: #635F70;
+
+  --border-color: #3E3A4C; /* Border netral terdefinisi rapi, anti-kontras norak */
+
+  /* Aksen diatur saturasi agar lembut dan tidak menusuk mata */
+  --accent-peach: #D48E77;
+  --accent-sage: #8FAF7F;
+  --accent-blue: #7F9DC4;
+  --accent-mustard: #D4BA66;
+  --accent-coral: #CE6557;
+
+  --status-success: #679E70;
+  --status-warning: #D4BA66;
+  --status-danger: #CE6557;
+  --status-info: #7F9DC4;
+
+  /* Bayangan fisik pekat khas neo-brutalism gelap (bukan putih terbalik) */
+  --shadow-color: #08070C;
+  --shadow-sm: 2px 2px 0 var(--shadow-color);
+  --shadow: 4px 4px 0 var(--shadow-color);
+  --shadow-lg: 6px 6px 0 var(--shadow-color);
+  --shadow-xl: 8px 8px 0 var(--shadow-color);
+  --shadow-active: 1px 1px 0 var(--shadow-color);
+}
+

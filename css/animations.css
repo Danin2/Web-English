@@ -1,0 +1,86 @@
+/* ============================================================
+   animations.css — Scroll-reveal & micro-interactions
+   Pure CSS keyframes + JS IntersectionObserver.
+   Uses only transform + opacity (compositor-only, no jank).
+   ============================================================ */
+
+/* ── Keyframes ─────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes badgePop {
+  0%   { opacity: 0; transform: scale(0.82); }
+  65%  { transform: scale(1.05);             }
+  100% { opacity: 1; transform: scale(1);    }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-18px); }
+  to   { opacity: 1; transform: translateX(0);     }
+}
+
+/* ── Scroll-reveal base ────────────────────────────────────── */
+.anim-ready {
+  opacity: 0;
+}
+
+.anim-visible {
+  animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ── Hero (above-fold — no scroll delay) ───────────────────── */
+.hero__text {
+  animation: fadeIn 0.65s ease both;
+}
+
+.hero__photo-wrapper {
+  animation: fadeUp 0.7s 0.12s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ── Section badge pop ─────────────────────────────────────── */
+.section-badge {
+  animation: badgePop 0.4s 0.05s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* ── Stagger: gallery cards ────────────────────────────────── */
+.gallery-grid .gallery-card:nth-child(1).anim-visible { animation-delay: 0.00s; }
+.gallery-grid .gallery-card:nth-child(2).anim-visible { animation-delay: 0.07s; }
+.gallery-grid .gallery-card:nth-child(3).anim-visible { animation-delay: 0.14s; }
+.gallery-grid .gallery-card:nth-child(4).anim-visible { animation-delay: 0.21s; }
+.gallery-grid .gallery-card:nth-child(5).anim-visible { animation-delay: 0.28s; }
+.gallery-grid .gallery-card:nth-child(6).anim-visible { animation-delay: 0.35s; }
+
+/* ── Stagger: review cards ─────────────────────────────────── */
+.reviews-grid .review-card:nth-child(1).anim-visible { animation-delay: 0.00s; }
+.reviews-grid .review-card:nth-child(2).anim-visible { animation-delay: 0.09s; }
+.reviews-grid .review-card:nth-child(3).anim-visible { animation-delay: 0.18s; }
+
+/* ── Timeline items — slide in from left ───────────────────── */
+.timeline-item.anim-visible {
+  animation: slideRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.timeline-item:nth-child(2).anim-visible { animation-delay: 0.08s; }
+.timeline-item:nth-child(3).anim-visible { animation-delay: 0.16s; }
+
+/* ── Navbar entry ──────────────────────────────────────────── */
+.site-header {
+  animation: fadeIn 0.5s ease both;
+}
+
+/* ── Reduced motion — accessibility non-negotiable ─────────── */
+@media (prefers-reduced-motion: reduce) {
+  .anim-ready           { opacity: 1 !important; }
+  .anim-visible,
+  .hero__text,
+  .hero__photo-wrapper,
+  .section-badge,
+  .site-header          { animation: none !important; }
+}
+
